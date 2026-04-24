@@ -15,11 +15,11 @@ def es_par(numero):
     else:
         return "Impar"
 
-def verificar_edad(edad):
+def es_mayor_de_edad(edad):
     if edad >= 18:
-        return "Mayor de edad"
+        return "Sí"
     else:
-        return "Menor de edad"
+        return "No"
 
 while True:
     print("\n" + "="*40)
@@ -70,8 +70,8 @@ while True:
         print("\n--- VERIFICAR EDAD ---")
         nombre = input("Ingresa tu nombre: ")
         edad = int(input("Ingresa tu edad: "))
-        resultado = verificar_edad(edad)
-        print(f"{nombre}, tienes {edad} años. Eres {resultado}.")
+        resultado = es_mayor_de_edad(edad)
+        print(f"{nombre}, tienes {edad} años. ¿Es mayor de edad? {resultado}")
 
     elif opcion == "4":
         print("\n¡Hasta luego!")
