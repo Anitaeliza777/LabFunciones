@@ -1,7 +1,6 @@
-print("LabFunciones listo")
 
 def saludar(nombre):
-    print("Hola,", nombre)
+    print(f"Hola, {nombre}")
 
 def sumar(a, b):
     return a + b
@@ -22,11 +21,12 @@ def verificar_edad(edad):
         return "Menor de edad"
 
 
+
 while True:
     print("\n" + "="*40)
     print("          MENÚ PRINCIPAL")
     print("="*40)
-    print("1. Saludar (ejecutar pruebas)")
+    print("1. Saludar")
     print("2. Calculadora")
     print("3. Verificar mayoría de edad")
     print("4. Salir")
@@ -34,19 +34,41 @@ while True:
     
     opcion = input("Selecciona una opción (1-4): ")
     
- 
+
     if opcion == "1":
-        print("\n--- EJECUTANDO SALUDOS ---")
-        saludar("Frank")
-        saludar("Ana")
+        print("\n--- SALUDAR ---")
+        nombre = input("Ingresa tu nombre: ")
+        saludar(nombre)
     
-   
+
     elif opcion == "2":
-        print("\n--- EJECUTANDO CALCULADORA ---")
-        print(f"Suma: 3 + 5 = {sumar(3, 5)}")
-        print(f"Multiplicación: 4 × 6 = {multiplicar(4, 6)}")
-        print(f"Número 4 es: {es_par(4)}")
-        print(f"Número 7 es: {es_par(7)}")
+        print("\n--- CALCULADORA ---")
+        print("Submenú:")
+        print("   a) Sumar")
+        print("   b) Multiplicar")
+        print("   c) Verificar si un número es par/impar")
+        
+        sub_opcion = input("Elige una sub-opción (a/b/c): ").lower()
+        
+        if sub_opcion == "a":
+            num1 = float(input("Ingresa el primer número: "))
+            num2 = float(input("Ingresa el segundo número: "))
+            resultado = sumar(num1, num2)
+            print(f"Resultado: {num1} + {num2} = {resultado}")
+        
+        elif sub_opcion == "b":
+            num1 = float(input("Ingresa el primer número: "))
+            num2 = float(input("Ingresa el segundo número: "))
+            resultado = multiplicar(num1, num2)
+            print(f"Resultado: {num1} × {num2} = {resultado}")
+        
+        elif sub_opcion == "c":
+            numero = int(input("Ingresa un número entero: "))
+            resultado = es_par(numero)
+            print(f"El número {numero} es {resultado}")
+        
+        else:
+            print("Opción no válida")
     
 
     elif opcion == "3":
@@ -56,10 +78,11 @@ while True:
         resultado = verificar_edad(edad)
         print(f"{nombre}, tienes {edad} años. Eres {resultado}.")
     
-    
+  
     elif opcion == "4":
         print("\n¡Hasta luego!")
         break
     
+  
     else:
         print("Opción no válida. Por favor elige 1, 2, 3 o 4.")
